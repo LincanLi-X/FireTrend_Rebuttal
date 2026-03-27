@@ -1,7 +1,14 @@
+# 📌 Table of Contents
+
+- [1. Response to Reviewer `X4zH` Question & New Added Experiments](#1-rebuttal)
+- [2. Response to Reviewer `tHLC` Question & New Added Experiments](#2-rebuttal)
+- [3. Response to Reviewer `Ubjc` Question & New Added Experiments](#3-rebuttal)
+- [4. Response to Reviewer `gEZD` Question & New Added Experiments](#4-rebuttal)
+
+
 
 
 ## 1. Response to Reviewer `X4zH` Question & New Added Experiments
-
 
 
 ### Response to Q1: FireTrend Model Sensitivity to Meteorological Input Noise
@@ -123,4 +130,23 @@ Table 5(b). Ablation study with uncertainty estimates on FireCast-FL
 | **FireTrend**            | **0.6235 ± 0.0034** | **0.6947 ± 0.0030** | **0.8768 ± 0.0037** |
 
 As shown in Table 5(b), the complete FireTrend model consistently outperforms all ablated variants, and the variance across runs is small. The error bars therefore do not overlap substantially with the strongest ablations in most cases, supporting the statistical reliability of the improvements. We've also revised **Figure 2** to include these error bars and add the full numerical results in our manuscript. 
+
+------
+
+
+## 2. Response to Reviewer `tHLC` Question & New Added Experiments
+
+
+
+
+
+
+## 3. Response to Reviewer `Ubjc` Question & New Added Experiments
+
+
+
+
+
+## 4. Response to Reviewer `gEZD` Question & New Added Experiments
+
 
