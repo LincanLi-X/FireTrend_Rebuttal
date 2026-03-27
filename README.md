@@ -1,9 +1,9 @@
 # 📌 Table of Contents
 
-- [1. Response to Reviewer `X4zH` Question and Added Experiments](#1-response-to-reviewer-`X4zH`-question-and-added-experiments)
-- [2. Response to Reviewer `tHLC` Question and Added Experiments](#2-response-to-reviewer-`tHLC`-question-and-added-experiments)
-- [3. Response to Reviewer `Ubjc` Question and Added Experiments](#3-response-to-reviewer-`Ubjc`-question-and-added-experiments)
-- [4. Response to Reviewer `gEZD` Question and Added Experiments](#4-response-to-reviewer-`gEZD`-question-and-added-experiments)
+- [1. Response to Reviewer X4zH Question and Added Experiments](#1-response-to-reviewer-X4zH-question-and-added-experiments)
+- [2. Response to Reviewer tHLC Question and Added Experiments](#2-response-to-reviewer-tHLC-question-and-added-experiments)
+- [3. Response to Reviewer Ubjc Question and Added Experiments](#3-response-to-reviewer-Ubjc-question-and-added-experiments)
+- [4. Response to Reviewer gEZD Question and Added Experiments](#4-response-to-reviewer-gEZD-question-and-added-experiments)
 
 
 
@@ -134,19 +134,19 @@ As shown in Table 5(b), the complete FireTrend model consistently outperforms al
 ------
 
 
-## 2. Response to Reviewer `tHLC` Question and Added Experiments
+## 2. Response to Reviewer tHLC Question and Added Experiments
 
 
 
 
 
 
-## 3. Response to Reviewer `Ubjc` Question and Added Experiments
+## 3. Response to Reviewer Ubjc Question and Added Experiments
 
 
 
 
 
-## 4. Response to Reviewer `gEZD` Question & New Added Experiments
+## 4. Response to Reviewer gEZD Question and Added Experiments
 
 
