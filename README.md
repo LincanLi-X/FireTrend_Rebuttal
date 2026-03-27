@@ -8,7 +8,7 @@
 
 
 
-## 1. Response to Reviewer `X4zH` Question & New Added Experiments
+## 1. Response to Reviewer `X4zH` Question and Added Experiments
 
 
 ### Response to Q1: FireTrend Model Sensitivity to Meteorological Input Noise
@@ -134,14 +134,14 @@ As shown in Table 5(b), the complete FireTrend model consistently outperforms al
 ------
 
 
-## 2. Response to Reviewer `tHLC` Question & New Added Experiments
+## 2. Response to Reviewer `tHLC` Question and Added Experiments
 
 
 
 
 
 
-## 3. Response to Reviewer `Ubjc` Question & New Added Experiments
+## 3. Response to Reviewer `Ubjc` Question and Added Experiments
 
 
 
