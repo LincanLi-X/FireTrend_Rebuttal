@@ -136,7 +136,40 @@ As shown in Table 5(b), the complete FireTrend model consistently outperforms al
 
 ## 2. Response to Reviewer tHLC Question and Added Experiments
 
+> Reply to Reviewer `tHLC` about the Weaknesses
 
+### Weakness 1. Clarifying what is novel in FireTrend: physics guidance vs. overall architecture
+
+**Core concern summarized from W1, W7, W8, and the note on simpler physics baselines:**  
+The reviewer is unsure whether the gains come from physics guidance itself, from the overall multimodal architecture, or simply from a stronger/tuned backbone.
+
+**Response:**
+
+We would like to clarify that FireTrend is intentionally designed as a **unified system**, not as a single-module paper. Its contribution is not that PyroCast alone should dominate every other design choice, but that large-scale wildfire forecasting benefits from the **joint integration** of three ingredients: (1) a modern multimodal spatiotemporal backbone, (2) explicit cross-view representation alignment, and  (3) physics-guided propagation constraints.  
+
+In this sense, there is no contradiction between the strong contribution of cross-modal contrast in the ablation study and our emphasis on PyroCast. These two components address **different failure modes**: cross-modal contrast improves representation alignment across heterogeneous data sources, while PyroCast imposes directional and physically plausible propagation structure on the final forecast. The ablations show that both are necessary, and the full model performs best only when these components are used together. We will make this division of roles much clearer in the revision and add a simpler physics baseline comparison to isolate the added value of learned physics guidance over heuristic wind-aligned smoothing.
+
+
+
+### Weakness 2. Clarifying the forecasting target: wildfire risk mapping vs. full disaster risk assessment
+
+**Core concern summarized from the framing note and parts of W3:** The reviewer interprets “risk” in the broader disaster-science sense and therefore views the paper as conflating hazard/spread forecasting with exposure and vulnerability modeling.
+
+**Response:** We agree that in the broad disaster-risk literature, "risk" can include **hazard, exposure, and vulnerability**. Our paper uses the term in the more task-specific sense common in geospatial forecasting, where the objective is to predict the **spatial likelihood/intensity of wildfire occurrence and propagation** under environmental conditions. In other words, FireTrend is fundamentally a **wildfire hazard/spread forecasting framework**, not a complete socio-environmental risk assessment system.  
+
+This distinction does not weaken the technical contribution; rather, it clarifies its scope. Our model is designed to forecast where wildfire activity is likely to occur or intensify, conditioned on fuels, weather, and geospatial context. It does not explicitly model population exposure, infrastructure vulnerability, or downstream damage. We will revise the wording in the paper to make this scope precise, explicitly framing FireTrend as a **hazard-oriented wildfire forecasting model**, while noting that coupling it with exposure/vulnerability layers is an important future direction for operational decision support.
+
+
+
+### Weakness 3. Clarifying what evidence matters operationally: physical realism, decision relevance, and presentation density
+
+**Core concern summarized from W2, W3, W4, and W5:** The reviewer wants more operational interpretation of the results, stronger case-based evidence for physical realism, and a clearer presentation of the method and its practical meaning.
+
+**Response:** We believe the underlying issue here is less about the absence of evidence than about how the evidence is currently surfaced. The paper already evaluates predictive accuracy, ablation behavior, and physical consistency, but we agree that the current presentation makes these contributions appear denser and less decision-oriented than intended.  
+
+More specifically, PDS and Kappa were introduced to evaluate whether predictions are not only accurate, but also **directionally and spatially plausible** under meteorological forcing. Their purpose is to move beyond pure prediction accuracy toward physically meaningful behavior. We agree, however, that this should be connected more explicitly to practical wildfire forecasting scenarios, such as better directional spread alignment under strong-wind regimes or more coherent fire-front evolution during rapidly changing events. We will therefore sharpen the exposition in the revision by: (1) simplifying the high-level method description, (2) clarifying the flow of data and losses in the main text and figure, and (3) adding more case-based interpretation of physical consistency and threshold-relevant behavior.  
+
+In short, we do not view this as a fundamental weakness of the method, but as a presentation issue that can be improved by making the operational meaning of the results more explicit.
 
 
 
