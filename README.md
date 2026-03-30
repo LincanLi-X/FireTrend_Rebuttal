@@ -174,7 +174,8 @@ In short, we do not view this as a fundamental weakness of the method, but as a 
 ---
 As requested by the reviewer, we add two physics metrics:
 
-** (I) Temporal Drift Error (TDE).** It measures how well the model captures the true inter-step temporal change in wildfire risk. Let $\hat{Y}_t$ and $Y_t$ denote the predicted and ground-truth wildfire risk maps at time $t$, respectively. We define the temporal change fields as $\Delta \hat{Y}_t = \hat{Y}_t - \hat{Y}_{t-1}$ and $\Delta Y_t = Y_t - Y_{t-1}$. Then, TDE is computed as:
+**(I) Temporal Drift Error (TDE).** It measures how well the model captures the true inter-step temporal change in wildfire risk. Let $\hat{Y}_t$ and $Y_t$ denote the predicted and ground-truth wildfire risk maps at time *t*, respectively. We define the temporal change fields as 
+$\Delta \hat{Y}_t = \hat{Y}_t - \hat{Y}_{t-1}$ and $\Delta Y_t = Y_t - Y_{t-1}$. Then, TDE is computed as:
 
 $$
 TDE = \frac{1}{T-1} \sum_{t=2}^{T} \frac{1}{|\Omega|} \left\| \Delta \hat{Y}_t - \Delta Y_t \right\|_1
@@ -183,7 +184,7 @@ $$
 where $\Omega$ denotes the set of spatial grid cells. A lower TDE indicates that the predicted temporal evolution more closely matches the true wildfire dynamics, and therefore reflects less prediction drift.
 
 
-** (II) Temporal Consistency Score (TCS).** It measures whether the temporal smoothness of the predicted wildfire sequence is consistent with that of the ground-truth sequence. Using the same temporal change fields, it is defined as:
+**(II) Temporal Consistency Score (TCS).** It measures whether the temporal smoothness of the predicted wildfire sequence is consistent with that of the ground-truth sequence. Using the same temporal change fields, it is defined as:
 
 $$
 TCS = 1 - \frac{\sum_{t=2}^{T} \left\| \Delta \hat{Y}_t - \Delta Y_t \right\|_1}{\sum_{t=2}^{T} \left\| \Delta Y_t \right\|_1 + \epsilon}
