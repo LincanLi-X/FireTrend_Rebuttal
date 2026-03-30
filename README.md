@@ -65,7 +65,7 @@ At the implementation level, FireTrend is resolution-flexible: the dataloader an
 
 ### Response to Q5: Model size, training cost, and inference speed
 
-**A5:** We thank the reviewer for this important suggestion. We agree that reporting computational characteristics is necessary for a fair assessment of practical usability. We therefore added a computational comparison including **model size (number of parameters), training cost, and inference speed**, and summarize the results in **Table X**.
+**A5:** We thank the reviewer for this important suggestion. We agree that reporting computational characteristics is necessary for a fair assessment of practical usability. We therefore added a computational comparison including **model size (number of parameters), training cost, and inference speed**, and summarize the results in **Table 3**.
 
 **Table 3.** Computational comparison with representative baselines
 
