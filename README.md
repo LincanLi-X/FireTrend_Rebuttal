@@ -86,7 +86,7 @@ As shown in Table 3, FireTrend achieves a favorable trade-off between predictive
 
 ### Response to Q6: Robustness to missing or noisy modalities
 
-**A6:** We appreciate this question and agree that robustness to imperfect multimodal inputs is important in real deployment. We therefore added experiments with `missing modalities` and `noisy modalities`, where we systematically remove or perturb one modality at evaluation time and report the resulting performance in **Table Y**.
+**A6:** We appreciate this question and agree that robustness to imperfect multimodal inputs is important in real deployment. We therefore added experiments with `missing modalities` and `noisy modalities`, where we systematically remove or perturb one modality at evaluation time and report the resulting performance in **Table 4**.
 
 **Table 4.** Robustness to missing or noisy modalities
 
