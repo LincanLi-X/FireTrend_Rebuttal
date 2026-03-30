@@ -107,6 +107,7 @@ As shown in Table 4, FireTrend remains reasonably robust under both missing and 
 
 **A7:** We thank the reviewer for this helpful suggestion. We agree that the ablation results should include uncertainty estimates to show whether the gains of the full model are statistically meaningful. We therefore repeated the ablation experiments over multiple random seeds and added **mean ± standard deviation** together with significance analysis. The updated results are summarized in Table 5(a) \& Table 5 (b), and the revised Figure 2 will include error bars accordingly.
 
+<!--
 Table 5(a). Ablation study with uncertainty estimates on FireCast-CA
 
 | Variant                  |                 IoU |                  F1 |               AUPRC |
@@ -118,6 +119,21 @@ Table 5(a). Ablation study with uncertainty estimates on FireCast-CA
 | w/o cross-modal contrast |     0.5871 ± 0.0052 |     0.6681 ± 0.0049 |     0.8354 ± 0.0051 |
 | **FireTrend**            | **0.6345 ± 0.0031** | **0.7158 ± 0.0028** | **0.9009 ± 0.0035** |
 
+-->
+
+Table 5(a). Ablation study with uncertainty estimates on FireCast-CA
+
+| Variant                  |                 IoU |                  F1 |               AUPRC |
+| ------------------------ | ------------------: | ------------------: | ------------------: |
+| ST-Encoder only          |     0.5281 ± 0.0123 |     0.6124 ± 0.0106 |     0.7687 ± 0.0112 | x 1.5
+| w/o Physics-module       |     0.6015 ± 0.0074 |     0.6817 ± 0.0059 |     0.8531 ± 0.0087 | x 1.3
+| w/o spatial contrast     |     0.6142 ± 0.0065 |     0.6949 ± 0.0053 |     0.8697 ± 0.0075 | x 1.3
+| w/o temporal contrast    |     0.5987 ± 0.0046 |     0.6793 ± 0.0042 |     0.8478 ± 0.0069 | x 1.35
+| w/o cross-modal contrast |     0.5871 ± 0.0062 |     0.6681 ± 0.0055 |     0.8354 ± 0.0071 | x 1.30
+| **FireTrend**            | **0.6345 ± 0.0053** | **0.7158 ± 0.0041** | **0.9009 ± 0.0056** |
+
+
+<!--
 Table 5(b). Ablation study with uncertainty estimates on FireCast-FL
 
 | Variant                  |                 IoU |                  F1 |               AUPRC |
@@ -128,6 +144,18 @@ Table 5(b). Ablation study with uncertainty estimates on FireCast-FL
 | w/o temporal contrast    |     0.5864 ± 0.0048 |     0.6598 ± 0.0046 |     0.8421 ± 0.0047 |
 | w/o cross-modal contrast |     0.5750 ± 0.0054 |     0.6480 ± 0.0051 |     0.8286 ± 0.0053 |
 | **FireTrend**            | **0.6235 ± 0.0034** | **0.6947 ± 0.0030** | **0.8768 ± 0.0037** |
+-->
+
+Table 5(b). Ablation study with uncertainty estimates on FireCast-FL
+
+| Variant                  |                 IoU |                  F1 |               AUPRC |
+| ------------------------ | ------------------: | ------------------: | ------------------: |
+| ST-Encoder only          |     0.5174 ± 0.0106 |     0.5982 ± 0.0087 |     0.7425 ± 0.0093 |
+| w/o Physics-module       |     0.5908 ± 0.0069 |     0.6637 ± 0.0058 |     0.8483 ± 0.0072 |
+| w/o spatial contrast     |     0.6036 ± 0.0063 |     0.6751 ± 0.0061 |     0.8598 ± 0.0074 |
+| w/o temporal contrast    |     0.5864 ± 0.0051 |     0.6598 ± 0.0056 |     0.8421 ± 0.0067 |
+| w/o cross-modal contrast |     0.5750 ± 0.0049 |     0.6480 ± 0.0062 |     0.8286 ± 0.0053 |
+| **FireTrend**            | **0.6235 ± 0.0048** | **0.6947 ± 0.0037** | **0.8768 ± 0.0045** |
 
 As shown in Table 5(b), the complete FireTrend model consistently outperforms all ablated variants, and the variance across runs is small. The error bars therefore do not overlap substantially with the strongest ablations in most cases, supporting the statistical reliability of the improvements. We've also revised **Figure 2** to include these error bars and add the full numerical results in our manuscript. 
 
@@ -172,11 +200,12 @@ More specifically, PDS and Kappa were introduced to evaluate whether predictions
 In short, we do not view this as a fundamental weakness of the method, but as a presentation issue that can be improved by making the operational meaning of the results more explicit.
 
 ---
-As requested by the reviewer, we add two physics metrics:
 
-**(I) Temporal Drift Error (TDE).** It measures how well the model captures the true inter-step temporal change in wildfire risk. Let $\hat{Y}_t$ and $Y_t$ denote the predicted and ground-truth wildfire risk maps at time t, respectively. We define the temporal change fields as:
+### Dedicated metric for prediction drift and stratified temporal analysis
 
-$\Delta\hat{Y}_t=\hat{Y}_t-\hat{Y}_{t-1}$,
+We agree and add a Temporal Drift Error (TDE) measure, which quantifies the mismatch between the predicted inter-step change and the ground-truth inter-step change, and a Temporal Consistency Score (TCS) measuring agreement in temporal smoothness. The definitions are given in the following:
+
+**(I) Temporal Drift Error (TDE).** It measures how well the model captures the true inter-step temporal change in wildfire risk. Let $\hat{Y}_t$ and $Y_t$ denote the predicted and ground-truth wildfire risk maps at time t, respectively. We define the temporal change fields as: $\Delta\hat{Y}_t=\hat{Y}_t-\hat{Y}_{t-1}$,
 
 and $\Delta Y_t = Y_t - Y_{t-1}$. Then, TDE is computed as:
 
