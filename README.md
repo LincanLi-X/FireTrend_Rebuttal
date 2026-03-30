@@ -105,7 +105,7 @@ As shown in Table 4, FireTrend remains reasonably robust under both missing and 
 
 ### Response to Q7: Error bars and statistical significance for Figure 2
 
-**A7:** We thank the reviewer for this helpful suggestion. We agree that the ablation results should include uncertainty estimates to show whether the gains of the full model are statistically meaningful. We therefore repeated the ablation experiments over multiple random seeds and added **mean ± standard deviation** together with significance analysis. The updated results are summarized in Table 5(a), and the revised Figure 2 will include error bars accordingly.
+**A7:** We thank the reviewer for this helpful suggestion. We agree that the ablation results should include uncertainty estimates to show whether the gains of the full model are statistically meaningful. We therefore repeated the ablation experiments over multiple random seeds and added **mean ± standard deviation** together with significance analysis. The updated results are summarized in Table 5(a) \& Table 5 (b), and the revised Figure 2 will include error bars accordingly.
 
 Table 5(a). Ablation study with uncertainty estimates on FireCast-CA
 
