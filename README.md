@@ -229,9 +229,9 @@ where $\epsilon$ is a small constant for numerical stability. A higher TCS indic
 ## 3. Response to Reviewer Ubjc Question and Added Experiments
 
 
-
+All rebuttal responses to Reviewer `Ubjc` have already been fully provided in the OpenReview discussion panel.
 
 
 ## 4. Response to Reviewer gEZD Question and Added Experiments
 
-
+All rebuttal responses to Reviewer `gEZD` have already been fully provided in the OpenReview discussion panel.
