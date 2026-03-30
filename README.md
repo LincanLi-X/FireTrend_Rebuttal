@@ -175,7 +175,8 @@ In short, we do not view this as a fundamental weakness of the method, but as a 
 As requested by the reviewer, we add two physics metrics:
 
 **(I) Temporal Drift Error (TDE).** It measures how well the model captures the true inter-step temporal change in wildfire risk. Let $\hat{Y}_t$ and $Y_t$ denote the predicted and ground-truth wildfire risk maps at time *t*, respectively. We define the temporal change fields as 
-$\Delta \hat{Y}_t = \hat{Y}_t - \hat{Y}_{t-1}$ 
+$\Delta \hat{Y}_t = \hat{Y}_t - \hat{Y}_{t-1}$
+
 and $\Delta Y_t = Y_t - Y_{t-1}$. 
 Then, TDE is computed as:
 
