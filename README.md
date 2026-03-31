@@ -194,8 +194,6 @@ In this sense, there is no contradiction between the strong contribution of cros
 -->
 
 
-**Response to W1:** We summarize the clarification in Table X below.
-
 **Table X:** Clarification of the novelty in FireTrend. FireTrend is designed as a unified system in which different components address different failure modes: cross-view contrastive learning improves representation alignment, while PyroCast imposes physically plausible propagation structure. The contribution therefore lies in their complementary integration rather than in any single component alone.
 
 | Component | Main role in FireTrend | Failure mode addressed | Evidence in our paper |
