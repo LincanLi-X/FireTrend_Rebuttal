@@ -61,7 +61,7 @@ Table 1: FireTrend model sensitivity to meteorological input noise.
 
 ### Response to Q3. Evidence that PyroCast improves physical realism beyond correlation-style metrics
 
-**Table X:** Physical-consistency evidence for PyroCast. PDS and Kappa are intended to measure directional plausibility and spatial coherence, rather than plain correlation. Together with the ablation study and qualitative rollout examples, they support that PyroCast improves the physical realism of wildfire propagation; in the revision, we will further strengthen this with event-level case analyses.
+**Table 3:** Physical-consistency evidence for PyroCast. PDS and Kappa are intended to measure directional plausibility and spatial coherence, rather than plain correlation. Together with the ablation study and qualitative rollout examples, they support that PyroCast improves the physical realism of wildfire propagation; in the revision, we will further strengthen this with event-level case analyses.
 
 | Component | What it evaluates | Why it is not plain correlation | Evidence in our paper |
 |---|---|---|---|
@@ -83,7 +83,7 @@ At the implementation level, FireTrend is resolution-flexible: the dataloader an
 
 ### Response to Q4. Scaling to larger grids or higher-resolution datasets.
 
-**Table X:** Clarification of the resolution choice and scalability of FireTrend. The `0.25°` grid is a deliberate compromise between physical fidelity, multimodal alignment, and computational scalability, while FireTrend and PyroCast remain flexible and scalable beyond this specific setting.
+**Table 4:** Clarification of the resolution choice and scalability of FireTrend. The `0.25°` grid is a deliberate compromise between physical fidelity, multimodal alignment, and computational scalability, while FireTrend and PyroCast remain flexible and scalable beyond this specific setting.
 
 
 | Aspect | Explanation | Evidence in our paper |
@@ -103,7 +103,7 @@ At the implementation level, FireTrend is resolution-flexible: the dataloader an
 **A5:** We thank the reviewer for this important suggestion. We agree that reporting computational characteristics is necessary for a fair assessment of practical usability. We therefore added a computational comparison including **model size (number of parameters), training cost, and inference speed**, and summarize the results in **Table 3**.
 -->
 
-**Table 3.** Computational comparison with representative baselines. As shown in Table 3, FireTrend achieves a favorable trade-off between predictive performance and computational cost. It is more efficient than larger Transformer/foundation-style baselines while remaining substantially more expressive than lighter recurrent or convolutional baselines. This supports our claim that FireTrend is not only accurate, but also practical for large-scale wildfire forecasting.
+**Table 5.** Computational comparison with representative baselines. As shown in Table 3, FireTrend achieves a favorable trade-off between predictive performance and computational cost. It is more efficient than larger Transformer/foundation-style baselines while remaining substantially more expressive than lighter recurrent or convolutional baselines. This supports our claim that FireTrend is not only accurate, but also practical for large-scale wildfire forecasting.
 
 | Method           | Params (M) | Train Time / epoch (min) | Inference Time / batch (ms) | Peak GPU Mem (GB) |
 | ---------------- | ---------: | -----------------------: | --------------------------: | ----------------: |
@@ -127,7 +127,7 @@ At the implementation level, FireTrend is resolution-flexible: the dataloader an
 **A6:** We appreciate this question and agree that robustness to imperfect multimodal inputs is important in real deployment. We therefore added experiments with `missing modalities` and `noisy modalities`, where we systematically remove or perturb one modality at evaluation time and report the resulting performance in **Table 4**.
 -->
 
-**Table 4.** Robustness to missing or noisy modalities. As shown in Table 4, FireTrend remains reasonably robust under both missing and noisy modalities, although performance decreases as expected when key information is removed. The degradation is largest when wildfire history or meteorological information is missing, which is consistent with the physical nature of the task. Importantly, the model does not collapse under moderate perturbations, suggesting that the multimodal design and residual physics-guided correction improve robustness in realistic imperfect-data scenarios.
+**Table 6.** Robustness to missing or noisy modalities. As shown in Table 4, FireTrend remains reasonably robust under both missing and noisy modalities, although performance decreases as expected when key information is removed. The degradation is largest when wildfire history or meteorological information is missing, which is consistent with the physical nature of the task. Importantly, the model does not collapse under moderate perturbations, suggesting that the multimodal design and residual physics-guided correction improve robustness in realistic imperfect-data scenarios.
 
 | Setting                         | FireCast-CA IoU | FireCast-CA F1 | FireCast-FL IoU | FireCast-FL F1 |
 | ------------------------------- | --------------: | -------------: | --------------: | -------------: |
@@ -148,7 +148,7 @@ At the implementation level, FireTrend is resolution-flexible: the dataloader an
 **A7:** We thank the reviewer for this helpful suggestion. We agree that the ablation results should include uncertainty estimates to show whether the gains of the full model are statistically meaningful. We therefore repeated the ablation experiments over multiple random seeds and added **mean ± standard deviation** together with significance analysis. The updated results are summarized in Table 5(a) \& Table 5 (b), and the revised Figure 2 will include error bars accordingly.
 -->
 
-Table 5(a). Ablation study with uncertainty estimates on FireCast-CA. The mean performance with standard deviation value are reported.
+Table 7(a). Ablation study with uncertainty estimates on FireCast-CA. The mean performance with standard deviation value are reported.
 
 | Variant                  |                 IoU |                  F1 |               AUPRC |
 | ------------------------ | ------------------: | ------------------: | ------------------: |
@@ -162,7 +162,7 @@ Table 5(a). Ablation study with uncertainty estimates on FireCast-CA. The mean p
 
 
 
-Table 5(b). Ablation study with uncertainty estimates on FireCast-FL. The mean performance with standard deviation value are reported.
+Table 7(b). Ablation study with uncertainty estimates on FireCast-FL. The mean performance with standard deviation value are reported.
 
 | Variant                  |                 IoU |                  F1 |               AUPRC |
 | ------------------------ | ------------------: | ------------------: | ------------------: |
@@ -194,7 +194,7 @@ In this sense, there is no contradiction between the strong contribution of cros
 -->
 
 
-**Table X:** Clarification of the novelty in FireTrend. FireTrend is designed as a unified system in which different components address different failure modes: cross-view contrastive learning improves representation alignment, while PyroCast imposes physically plausible propagation structure. The contribution therefore lies in their complementary integration rather than in any single component alone.
+**Table 8:** Clarification of the novelty in FireTrend. FireTrend is designed as a unified system in which different components address different failure modes: cross-view contrastive learning improves representation alignment, while PyroCast imposes physically plausible propagation structure. The contribution therefore lies in their complementary integration rather than in any single component alone.
 
 | Component | Main role in FireTrend | Failure mode addressed | Evidence in our paper |
 |---|---|---|---|
@@ -214,7 +214,7 @@ In this sense, there is no contradiction between the strong contribution of cros
 This distinction does not weaken the technical contribution; rather, it clarifies its scope. Our model is designed to forecast where wildfire activity is likely to occur or intensify, conditioned on fuels, weather, and geospatial context. It does not explicitly model population exposure, infrastructure vulnerability, or downstream damage. We will revise the wording in the paper to make this scope precise, explicitly framing FireTrend as a **hazard-oriented wildfire forecasting model**, while noting that coupling it with exposure/vulnerability layers is an important future direction for operational decision support.
 -->
 
-**Table X:** Clarification of the forecasting target in FireTrend. Our model focuses on hazard-oriented wildfire forecasting, i.e., predicting wildfire occurrence and propagation under environmental conditions, rather than full disaster-risk assessment involving exposure and vulnerability.
+**Table 9:** Clarification of the forecasting target in FireTrend. Our model focuses on hazard-oriented wildfire forecasting, i.e., predicting wildfire occurrence and propagation under environmental conditions, rather than full disaster-risk assessment involving exposure and vulnerability.
 
 
 | Aspect | Clarification |
@@ -238,7 +238,7 @@ More specifically, PDS and Kappa were introduced to evaluate whether predictions
 -->
 
 
-**Table X:** Clarification of the evidence for physical realism and operational relevance. The current manuscript already includes predictive, ablation, and physical-consistency evidence, but we agree that its practical meaning should be surfaced more clearly through simpler presentation and more case-based interpretation.
+**Table 10:** Clarification of the evidence for physical realism and operational relevance. The current manuscript already includes predictive, ablation, and physical-consistency evidence, but we agree that its practical meaning should be surfaced more clearly through simpler presentation and more case-based interpretation.
 
 
 | Aspect | Current evidence in the paper | Clarification / revision action |
@@ -279,7 +279,7 @@ where $\epsilon$ is a small constant for numerical stability. A higher TCS indic
 -->
 
 
-**Table X:** Dedicated temporal metrics for evaluating prediction drift and temporal consistency. TDE directly measures the error in predicted inter-step wildfire evolution, while TCS evaluates the agreement between predicted and true temporal smoothness patterns.
+**Table 11:** Dedicated temporal metrics for evaluating prediction drift and temporal consistency. TDE directly measures the error in predicted inter-step wildfire evolution, while TCS evaluates the agreement between predicted and true temporal smoothness patterns.
 
 <img src="Figure/Metric_for_prediction_drift_stratified_temporal.png" width="700">
 
