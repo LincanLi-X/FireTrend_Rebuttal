@@ -283,6 +283,7 @@ where $\epsilon$ is a small constant for numerical stability. A higher TCS indic
 
 **Table X:** Dedicated temporal metrics for evaluating prediction drift and temporal consistency. TDE directly measures the error in predicted inter-step wildfire evolution, while TCS evaluates the agreement between predicted and true temporal smoothness patterns.
 
+<img src="Figure/Metric_for_prediction_drift_stratified_temporal.png" width="700">
 
 <!--
 | Metric | Definition | Interpretation |
