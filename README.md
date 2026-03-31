@@ -284,11 +284,12 @@ where $\epsilon$ is a small constant for numerical stability. A higher TCS indic
 **Table X:** Dedicated temporal metrics for evaluating prediction drift and temporal consistency. TDE directly measures the error in predicted inter-step wildfire evolution, while TCS evaluates the agreement between predicted and true temporal smoothness patterns.
 
 
+<!--
 | Metric | Definition | Interpretation |
 |---|---|---|
 | **Temporal Drift Error (TDE)** | Let $\Delta \hat{Y}_t = \hat{Y}_t - \hat{Y}_{t-1}$ and $\Delta Y_t = Y_t - Y_{t-1}$. We define $$TDE = \frac{1}{T-1}\sum_{t=2}^{T}\frac{1}{|\Omega|}\left\|\Delta \hat{Y}_t - \Delta Y_t\right\|_1,$$ where $\Omega$ is the set of spatial grid cells. | Measures the mismatch between the predicted inter-step change and the ground-truth inter-step change. **Lower TDE** indicates less prediction drift and more accurate temporal evolution. |
 | **Temporal Consistency Score (TCS)** | Using the same temporal change fields, we define $$TCS = 1 - \frac{\sum_{t=2}^{T}\left\|\Delta \hat{Y}_t - \Delta Y_t\right\|_1}{\sum_{t=2}^{T}\left\|\Delta Y_t\right\|_1 + \epsilon},$$ where $\epsilon$ is a small constant for numerical stability. | Measures whether the temporal smoothness of the predicted wildfire sequence is consistent with that of the ground truth. **Higher TCS** indicates better temporal consistency without excessive artificial fluctuations. |
-
+-->
 
 
 
