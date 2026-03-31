@@ -45,7 +45,7 @@ A2: We agree that multi-step forecasting is important for practical wildfire man
 | 3-day ahead |          0.6012 |         0.6839 |            0.8715 |          0.5904 |         0.6658 |            0.8486 |
 | 5-day ahead |          0.5726 |         0.6541 |            0.8428 |          0.5617 |         0.6383 |            0.8219 |
 
-> As shown in Table Y, FireTrend maintains competitive performance in multi-step forecasting, although a gradual degradation is naturally observed as the forecast horizon increases. This result suggests that FireTrend is not limited to one-step prediction and can generalize to longer-horizon wildfire risk forecasting scenarios.
+> As shown in Table 2, FireTrend maintains competitive performance in multi-step forecasting, although a gradual degradation is naturally observed as the forecast horizon increases. This result suggests that FireTrend is not limited to one-step prediction and can generalize to longer-horizon wildfire risk forecasting scenarios.
 
 
 
