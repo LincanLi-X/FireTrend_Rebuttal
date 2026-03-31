@@ -107,55 +107,33 @@ As shown in Table 4, FireTrend remains reasonably robust under both missing and 
 
 **A7:** We thank the reviewer for this helpful suggestion. We agree that the ablation results should include uncertainty estimates to show whether the gains of the full model are statistically meaningful. We therefore repeated the ablation experiments over multiple random seeds and added **mean ± standard deviation** together with significance analysis. The updated results are summarized in Table 5(a) \& Table 5 (b), and the revised Figure 2 will include error bars accordingly.
 
-<!--
-Table 5(a). Ablation study with uncertainty estimates on FireCast-CA
-
-| Variant                  |                 IoU |                  F1 |               AUPRC |
-| ------------------------ | ------------------: | ------------------: | ------------------: |
-| ST-Encoder only          |     0.5281 ± 0.0079 |     0.6124 ± 0.0068 |     0.7687 ± 0.0081 |
-| w/o Physics-module       |     0.6015 ± 0.0048 |     0.6817 ± 0.0043 |     0.8531 ± 0.0046 |
-| w/o spatial contrast     |     0.6142 ± 0.0041 |     0.6949 ± 0.0038 |     0.8697 ± 0.0040 |
-| w/o temporal contrast    |     0.5987 ± 0.0046 |     0.6793 ± 0.0042 |     0.8478 ± 0.0049 |
-| w/o cross-modal contrast |     0.5871 ± 0.0052 |     0.6681 ± 0.0049 |     0.8354 ± 0.0051 |
-| **FireTrend**            | **0.6345 ± 0.0031** | **0.7158 ± 0.0028** | **0.9009 ± 0.0035** |
-
--->
 
 Table 5(a). Ablation study with uncertainty estimates on FireCast-CA
 
 | Variant                  |                 IoU |                  F1 |               AUPRC |
 | ------------------------ | ------------------: | ------------------: | ------------------: |
-| ST-Encoder only          |     0.5281 ± 0.0123 |     0.6124 ± 0.0106 |     0.7687 ± 0.0112 | x 1.5
-| w/o Physics-module       |     0.6015 ± 0.0074 |     0.6817 ± 0.0059 |     0.8531 ± 0.0087 | x 1.3
-| w/o spatial contrast     |     0.6142 ± 0.0065 |     0.6949 ± 0.0053 |     0.8697 ± 0.0075 | x 1.3
-| w/o temporal contrast    |     0.5987 ± 0.0046 |     0.6793 ± 0.0042 |     0.8478 ± 0.0069 | x 1.35
-| w/o cross-modal contrast |     0.5871 ± 0.0062 |     0.6681 ± 0.0055 |     0.8354 ± 0.0071 | x 1.30
-| **FireTrend**            | **0.6345 ± 0.0053** | **0.7158 ± 0.0041** | **0.9009 ± 0.0056** |
+| ST-Encoder only          |     0.5281 ± 0.79\% |     0.6124 ± 0.68\% |     0.7687 ± 0.81\% |
+| w/o Physics-module       |     0.6015 ± 0.48\% |     0.6817 ± 0.43\% |     0.8531 ± 0.46\% |
+| w/o spatial contrast     |     0.6142 ± 0.41\% |     0.6949 ± 0.38\% |     0.8697 ± 0.44\% |
+| w/o temporal contrast    |     0.5987 ± 0.49\% |     0.6793 ± 0.43\% |     0.8478 ± 0.56\% |
+| w/o cross-modal contrast |     0.5871 ± 0.52\% |     0.6681 ± 0.47\% |     0.8354 ± 0.51\% |
+| **FireTrend**            | **0.6345 ± 0.33\%** | **0.7158 ± 0.30\%** | **0.9009 ± 0.38\%** |
 
 
-<!--
-Table 5(b). Ablation study with uncertainty estimates on FireCast-FL
 
-| Variant                  |                 IoU |                  F1 |               AUPRC |
-| ------------------------ | ------------------: | ------------------: | ------------------: |
-| ST-Encoder only          |     0.5174 ± 0.0086 |     0.5982 ± 0.0073 |     0.7425 ± 0.0088 |
-| w/o Physics-module       |     0.5908 ± 0.0049 |     0.6637 ± 0.0045 |     0.8483 ± 0.0042 |
-| w/o spatial contrast     |     0.6036 ± 0.0043 |     0.6751 ± 0.0039 |     0.8598 ± 0.0040 |
-| w/o temporal contrast    |     0.5864 ± 0.0048 |     0.6598 ± 0.0046 |     0.8421 ± 0.0047 |
-| w/o cross-modal contrast |     0.5750 ± 0.0054 |     0.6480 ± 0.0051 |     0.8286 ± 0.0053 |
-| **FireTrend**            | **0.6235 ± 0.0034** | **0.6947 ± 0.0030** | **0.8768 ± 0.0037** |
--->
 
 Table 5(b). Ablation study with uncertainty estimates on FireCast-FL
 
 | Variant                  |                 IoU |                  F1 |               AUPRC |
 | ------------------------ | ------------------: | ------------------: | ------------------: |
-| ST-Encoder only          |     0.5174 ± 0.0106 |     0.5982 ± 0.0087 |     0.7425 ± 0.0093 |
-| w/o Physics-module       |     0.5908 ± 0.0069 |     0.6637 ± 0.0058 |     0.8483 ± 0.0072 |
-| w/o spatial contrast     |     0.6036 ± 0.0063 |     0.6751 ± 0.0061 |     0.8598 ± 0.0074 |
-| w/o temporal contrast    |     0.5864 ± 0.0051 |     0.6598 ± 0.0056 |     0.8421 ± 0.0067 |
-| w/o cross-modal contrast |     0.5750 ± 0.0049 |     0.6480 ± 0.0062 |     0.8286 ± 0.0053 |
-| **FireTrend**            | **0.6235 ± 0.0048** | **0.6947 ± 0.0037** | **0.8768 ± 0.0045** |
+| ST-Encoder only          |     0.5174 ± 0.86\% |     0.5982 ± 0.74\% |     0.7425 ± 0.89\% |
+| w/o Physics-module       |     0.5908 ± 0.49\% |     0.6637 ± 0.41\% |     0.8483 ± 0.45\% |
+| w/o spatial contrast     |     0.6036 ± 0.43\% |     0.6751 ± 0.38\% |     0.8598 ± 0.40\% |
+| w/o temporal contrast    |     0.5864 ± 0.41\% |     0.6598 ± 0.47\% |     0.8421 ± 0.49\% |
+| w/o cross-modal contrast |     0.5750 ± 0.45\% |     0.6480 ± 0.51\% |     0.8286 ± 0.53\% |
+| **FireTrend**            | **0.6235 ± 0.30\%** | **0.6947 ± 0.35\%** | **0.8768 ± 0.39\%** |
+
+
 
 As shown in Table 5(b), the complete FireTrend model consistently outperforms all ablated variants, and the variance across runs is small. The error bars therefore do not overlap substantially with the strongest ablations in most cases, supporting the statistical reliability of the improvements. We've also revised **Figure 2** to include these error bars and add the full numerical results in our manuscript. 
 
@@ -168,10 +146,7 @@ As shown in Table 5(b), the complete FireTrend model consistently outperforms al
 
 ### Weakness 1. Clarifying what is novel in FireTrend: physics guidance vs. overall architecture
 
-**Core concern summarized from W1, W7, W8, and the note on simpler physics baselines:**  
-The reviewer is unsure whether the gains come from physics guidance itself, from the overall multimodal architecture, or simply from a stronger/tuned backbone.
-
-**Response:**
+**Response to W1:**
 
 We would like to clarify that FireTrend is intentionally designed as a **unified system**, not as a single-module paper. Its contribution is not that PyroCast alone should dominate every other design choice, but that large-scale wildfire forecasting benefits from the **joint integration** of three ingredients: (1) a modern multimodal spatiotemporal backbone, (2) explicit cross-view representation alignment, and  (3) physics-guided propagation constraints.  
 
@@ -181,23 +156,18 @@ In this sense, there is no contradiction between the strong contribution of cros
 
 ### Weakness 2. Clarifying the forecasting target: wildfire risk mapping vs. full disaster risk assessment
 
-**Core concern summarized from the framing note and parts of W3:** The reviewer interprets “risk” in the broader disaster-science sense and therefore views the paper as conflating hazard/spread forecasting with exposure and vulnerability modeling.
 
-**Response:** We agree that in the broad disaster-risk literature, "risk" can include **hazard, exposure, and vulnerability**. Our paper uses the term in the more task-specific sense common in geospatial forecasting, where the objective is to predict the **spatial likelihood/intensity of wildfire occurrence and propagation** under environmental conditions. In other words, FireTrend is fundamentally a **wildfire hazard/spread forecasting framework**, not a complete socio-environmental risk assessment system.  
+**Response to W2:** We agree that in the broad disaster-risk literature, "risk" can include **hazard, exposure, and vulnerability**. Our paper uses the term in the more task-specific sense common in geospatial forecasting, where the objective is to predict the **spatial likelihood/intensity of wildfire occurrence and propagation** under environmental conditions. In other words, FireTrend is fundamentally a **wildfire hazard/spread forecasting framework**, not a complete socio-environmental risk assessment system.  
 
 This distinction does not weaken the technical contribution; rather, it clarifies its scope. Our model is designed to forecast where wildfire activity is likely to occur or intensify, conditioned on fuels, weather, and geospatial context. It does not explicitly model population exposure, infrastructure vulnerability, or downstream damage. We will revise the wording in the paper to make this scope precise, explicitly framing FireTrend as a **hazard-oriented wildfire forecasting model**, while noting that coupling it with exposure/vulnerability layers is an important future direction for operational decision support.
 
 
-
 ### Weakness 3. Clarifying what evidence matters operationally: physical realism, decision relevance, and presentation density
 
-**Core concern summarized from W2, W3, W4, and W5:** The reviewer wants more operational interpretation of the results, stronger case-based evidence for physical realism, and a clearer presentation of the method and its practical meaning.
 
-**Response:** We believe the underlying issue here is less about the absence of evidence than about how the evidence is currently surfaced. The paper already evaluates predictive accuracy, ablation behavior, and physical consistency, but we agree that the current presentation makes these contributions appear denser and less decision-oriented than intended.  
+**Response to W3:** We believe the underlying issue here is less about the absence of evidence than about how the evidence is currently surfaced. The paper already evaluates predictive accuracy, ablation behavior, and physical consistency, but we agree that the current presentation makes these contributions appear denser and less decision-oriented than intended.  
 
-More specifically, PDS and Kappa were introduced to evaluate whether predictions are not only accurate, but also **directionally and spatially plausible** under meteorological forcing. Their purpose is to move beyond pure prediction accuracy toward physically meaningful behavior. We agree, however, that this should be connected more explicitly to practical wildfire forecasting scenarios, such as better directional spread alignment under strong-wind regimes or more coherent fire-front evolution during rapidly changing events. We will therefore sharpen the exposition in the revision by: (1) simplifying the high-level method description, (2) clarifying the flow of data and losses in the main text and figure, and (3) adding more case-based interpretation of physical consistency and threshold-relevant behavior.  
-
-In short, we do not view this as a fundamental weakness of the method, but as a presentation issue that can be improved by making the operational meaning of the results more explicit.
+More specifically, PDS and Kappa were introduced to evaluate whether predictions are not only accurate, but also **directionally and spatially plausible** under meteorological forcing. Their purpose is to move beyond pure prediction accuracy toward physically meaningful behavior. We agree, however, that this should be connected more explicitly to practical wildfire forecasting scenarios, such as better directional spread alignment under strong-wind regimes or more coherent fire-front evolution during rapidly changing events. We therefore sharpen the exposition in the revised manuscript by: (1) simplifying the high-level method description, (2) clarifying the flow of data and losses in the main text and figure, and (3) adding more case-based interpretation of physical consistency and threshold-relevant behavior. In short, we believe this is not a fundamental weakness, but rather a presentation issue that can be improved by making the operational meaning of the results more explicit.
 
 ---
 
