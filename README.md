@@ -40,7 +40,7 @@ Table 1: FireTrend model sensitivity to meteorological input noise.
 **A2:** We agree that multi-step forecasting is important for practical wildfire management. The current submission focuses on the **one-step setting** to provide a controlled comparison with prior baselines, but the FireTrend framework itself is not restricted to one-step prediction. In our implementation, the forecasting horizon is configurable through the `pred_horizon` setting, which **allows** the same model framework to be evaluated for longer horizons without architectural changes. We therefore added a **multi-step forecasting experiment** on FireCast-CA and FireCast-FL, evaluating 1-day, 3-day, and 5-day ahead prediction.
 -->
 
- Table 2: Multi-step wildfire forecasting performance on 1-day, 3-day, and 5-day.
+ Table 2: Multi-step wildfire forecasting performance on 1-day, 3-day, and 5-day. FireTrend maintains competitive performance in multi-step forecasting, although a gradual degradation is naturally observed as the forecast horizon increases. 
 
 | Horizon     | FireCast-CA IoU | FireCast-CA F1 | FireCast-CA AUPRC | FireCast-FL IoU | FireCast-FL F1 | FireCast-FL AUPRC |
 | ----------- | --------------: | -------------: | ----------------: | --------------: | -------------: | ----------------: |
@@ -48,8 +48,9 @@ Table 1: FireTrend model sensitivity to meteorological input noise.
 | 3-day ahead |          0.6012 |         0.6839 |            0.8715 |          0.5904 |         0.6658 |            0.8486 |
 | 5-day ahead |          0.5726 |         0.6541 |            0.8428 |          0.5617 |         0.6383 |            0.8219 |
 
+<!--
 > As shown in Table 2, FireTrend maintains competitive performance in multi-step forecasting, although a gradual degradation is naturally observed as the forecast horizon increases. This result suggests that FireTrend is not limited to one-step prediction and can generalize to longer-horizon wildfire risk forecasting scenarios.
-
+-->
 
 <!--
 ### Response to Q3. Evidence that PyroCast improves physical realism beyond correlation-style metrics
