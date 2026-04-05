@@ -62,7 +62,7 @@ Table 1: FireTrend sensitivity to meteorological input noise. Our model remains 
 
 ### Response to Q3. Evidence that PyroCast improves physical realism beyond correlation-style metrics
 
-**Table 3:** Physical-consistency evidence for PyroCast. PDS and Kappa are intended to measure directional plausibility and spatial coherence, rather than plain correlation. Together with the ablation study and qualitative rollout examples, they support that PyroCast improves the physical realism of wildfire propagation; in the revision, we will further strengthen this with event-level case analyses.
+**Table 3:** Physical-consistency evidence for PyroCast. PDS and Kappa are intended to measure directional plausibility and spatial coherence, rather than plain correlation. Together with the ablation study and qualitative rollout examples, they support that PyroCast improves the physical realism of wildfire propagation.
 
 | Component | What it evaluates | Why it is not plain correlation | Evidence in our paper |
 |---|---|---|---|
@@ -104,7 +104,7 @@ At the implementation level, FireTrend is resolution-flexible: the dataloader an
 **A5:** We thank the reviewer for this important suggestion. We agree that reporting computational characteristics is necessary for a fair assessment of practical usability. We therefore added a computational comparison including **model size (number of parameters), training cost, and inference speed**, and summarize the results in **Table 3**.
 -->
 
-**Table 5.** Computational comparison with representative baselines. As shown in Table 3, FireTrend achieves a favorable trade-off between predictive performance and computational cost. It is more efficient than larger Transformer/foundation-style baselines while remaining substantially more expressive than lighter recurrent or convolutional baselines. This supports our claim that FireTrend is not only accurate, but also practical for large-scale wildfire forecasting.
+**Table 5.** Computational comparison with representative baselines. FireTrend achieves a favorable trade-off between predictive performance and computational cost. It is more efficient than larger Transformer/foundation-style baselines while remaining substantially more expressive than lighter recurrent or convolutional baselines.
 
 | Method           | Params (M) | Train Time / epoch (min) | Inference Time / batch (ms) | Peak GPU Mem (GB) |
 | ---------------- | ---------: | -----------------------: | --------------------------: | ----------------: |
@@ -128,7 +128,7 @@ At the implementation level, FireTrend is resolution-flexible: the dataloader an
 **A6:** We appreciate this question and agree that robustness to imperfect multimodal inputs is important in real deployment. We therefore added experiments with `missing modalities` and `noisy modalities`, where we systematically remove or perturb one modality at evaluation time and report the resulting performance in **Table 4**.
 -->
 
-**Table 6.** Robustness to missing or noisy modalities. As shown in Table 4, FireTrend remains reasonably robust under both missing and noisy modalities, although performance decreases as expected when key information is removed. The degradation is largest when wildfire history or meteorological information is missing, which is consistent with the physical nature of the task. Importantly, the model does not collapse under moderate perturbations, suggesting that the multimodal design and residual physics-guided correction improve robustness in realistic imperfect-data scenarios.
+**Table 6.** Robustness to missing or noisy modalities. FireTrend remains reasonably robust under both missing and noisy modalities. The performance drops are expected and moderate when key information is removed. Importantly, the model does not collapse under these perturbations, suggesting that the multimodal design and residual physics-guided correction improve robustness in realistic imperfect-data scenarios.
 
 | Setting                         | FireCast-CA IoU | FireCast-CA F1 | FireCast-FL IoU | FireCast-FL F1 |
 | ------------------------------- | --------------: | -------------: | --------------: | -------------: |
