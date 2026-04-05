@@ -18,7 +18,7 @@
 Importantly, FireTrend is not driven by meteorology alone: PyroCast is used as a **residual physics-guided correction** on top of the data-driven prediction, and the overall model also leverages wildfire history and static geospatial/fuel features. As a result, the model remains stable under moderate perturbations rather than collapsing when wind inputs are noisy.
 -->
 
-Table 1: FireTrend model sensitivity to meteorological input noise.
+Table 1: FireTrend model sensitivity to meteorological input noise. FireTrend remains stable under moderate perturbations to wind speed and direction. Even under `±10%` wind-speed noise or `±10°` direction noise, the performance drop is very limited, suggesting FireTrend model is robust to noise.
 
 | Setting                     | FireCast-CA IoU | FireCast-CA F1 | FireCast-FL IoU | FireCast-FL F1 |
 | --------------------------- | --------------: | -------------: | --------------: | -------------: |
@@ -27,9 +27,9 @@ Table 1: FireTrend model sensitivity to meteorological input noise.
 | Wind speed noise `±10%`     |          0.6217 |         0.7018 |          0.6115 |         0.6810 |
 | Wind direction noise `±5°`  |          0.6268 |         0.7075 |          0.6171 |         0.6874 |
 | Wind direction noise `±10°` |          0.6189 |         0.6992 |          0.6086 |         0.6779 |
-
+<!--
 > As shown in Table 1, FireTrend remains stable under moderate perturbations to wind speed and direction. Even under `±10%` wind-speed noise or `±10°` direction noise, the performance drop is limited, suggesting that the model is not overly brittle to meteorological uncertainty. This robustness comes from the fact that PyroCast acts as a residual physics-guided correction, while the full model also leverages wildfire history and static geospatial/fuel cues.
-
+-->
 ---
 
 
